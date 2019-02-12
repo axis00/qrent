@@ -1,0 +1,27 @@
+{
+  "name": "qrent-backend",
+  "version": "0.0.1b",
+  "description": "Qrent Backend Beta",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "doc": "apidoc -e node_modules/ -e doc/",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.10",
+    "mongoose-timestamp": "^0.6.0",
+    "restify": "^7.7.0",
+    "restify-errors": "^6.1.1",
+    "restify-jwt-community": "^1.0.9"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.7",
+    "nodemon": "^1.18.9"
+  }
+}
