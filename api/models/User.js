@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
         required : true,
         trim : true
     },
-    isQook : {
+    isOwner : {
         type : Boolean,
         required : true,
         default : false
