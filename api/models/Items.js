@@ -8,6 +8,11 @@ const ItemSchema = new mongoose.Schema({
         required : true,
         trim : true
     },
+    itemDesc : {
+        type : String,
+        required : true,
+        deafult : ""
+    },
     itemOwner : {
         type : String,
         required : true,
@@ -25,6 +30,8 @@ const ItemSchema = new mongoose.Schema({
     }
 
 // more schema attributes???
+// price?
+// availability?
 });
 
 ItemSchema.plugin(timestamp);

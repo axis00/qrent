@@ -3,7 +3,17 @@ const timestamp = require('mongoose-timestamp');
 
 const OrdersSchema = new mongoose.Schema({
 
-// add orders attributes
+	rentedBy : {
+		type : String,
+		required : true,
+		trim : true
+	},
+	itemID : {
+		type : String,
+		required : true
+	}
+
+	// more attributes for orders
 });
 
 OrderSchema.plugin(timestamp);
