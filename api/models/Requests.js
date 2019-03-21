@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const timestamp = require('mongoose-timestamp');
 
-const OrdersSchema = new mongoose.Schema({
+const RequestsSchema = new mongoose.Schema({
 
 	rentedBy : {
 		type : String,
@@ -16,7 +16,7 @@ const OrdersSchema = new mongoose.Schema({
 	// more attributes for orders
 });
 
-OrderSchema.plugin(timestamp);
+RequestSchema.plugin(timestamp);
 
-const Order = mongoose.model('Order', OrderSchema);
-module.exports = Order;
+const Request = mongoose.model('Request', RequestSchema);
+module.exports = Request;
