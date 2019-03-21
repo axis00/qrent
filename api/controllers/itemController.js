@@ -22,6 +22,21 @@ module.exports = {
 		});
 	},
 
+	publishItem : function(item){
+		const publishedItem = new publishedItem({
+			item
+		});
+
+		return new Promise( async (resolve, reject) => {
+			try {
+				const item = await publishedItem.save();
+				resolve(item);
+			} catch (error) {
+				reject("Failed writing to database");
+			}
+		});
+	},
+
 	deleteItem : function () {
 
 	},

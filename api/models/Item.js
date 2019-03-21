@@ -23,16 +23,16 @@ const ItemSchema = new mongoose.Schema({
         required : true,
         trim : true
     },
-    // itemType : {
-    // 	type : String,
-    // 	required : true,
-    // 	trim : true
-    // },
-    // itemCondition : {
-    // 	type : String,
-    // 	required : true,
-    // 	trim : true
-    // },
+/*     itemType : {
+    	type : String,
+    	required : true,
+    	trim : true
+    },
+    itemCondition : {
+    	type : String,
+    	required : true,
+    	trim : true
+    }, */
     photos : {
         type : [String]
     }
