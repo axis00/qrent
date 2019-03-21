@@ -3,6 +3,11 @@ const timestamp = require('mongoose-timestamp');
 
 const ItemSchema = new mongoose.Schema({
 
+    itemID : {
+        type : String,
+        required : true,
+        trim : true
+    },
     itemName : {
         type : String,
         required : true,
@@ -13,20 +18,23 @@ const ItemSchema = new mongoose.Schema({
         required : true,
         deafult : ""
     },
-    itemOwner : {
+    ownerID : {
         type : String,
         required : true,
         trim : true
     },
-    itemType : {
-    	type : String,
-    	required : true,
-    	trim : true
-    },
-    itemCondition : {
-    	type : String,
-    	required : true,
-    	trim : true
+    // itemType : {
+    // 	type : String,
+    // 	required : true,
+    // 	trim : true
+    // },
+    // itemCondition : {
+    // 	type : String,
+    // 	required : true,
+    // 	trim : true
+    // },
+    photos : {
+        type : [String]
     }
 
 // more schema attributes???

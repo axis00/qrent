@@ -1,17 +1,42 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
-const Items = require('../models/Items');
+const Item = require('../models/Item');
 
 module.exports = {
-	addItem : () => {
+	createItem : function(itemID, itemName, itemDesc, ownerID, photos){
+		const newItem = new Item({
+			itemID,
+			itemName,
+			itemDesc,
+			ownerID,
+			photos
+		});
 
-	}
-	deleteItem : () => {
+		return new Promise( async (resolve,reject) => {
+			try {
+				const item = await newItem.save();
+				resolve(item);
+			} catch (error) {
+				reject("Failed Writing to Database")
+			}
+		});
+	},
 
-	}
-	getItem : () => {
+	deleteItem : function () {
 
-	}
+	},
+
+	getItems : function(ownerID){
+		return new Promise( async (resolve, reject) => {
+			try {
+				const items = await Item.find({ownerID});
+				resolve(items);
+			} catch (error) {
+				reject(error);
+			}
+		});
+	},
+
 	updateItem : () => {
 		
 	}
@@ -19,7 +44,7 @@ module.exports = {
 
 
 // methods in itemController:
-// -addItem
+// -createItem
 // -deleteItem
 // -getItem
 // -updateItem

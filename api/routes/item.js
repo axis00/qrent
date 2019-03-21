@@ -2,7 +2,7 @@ const errors = require('restify-errors');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
 const User = require('../models/User');
-const Items = require('../models/Items');
+const Item = require('../models/Item');
 
 module.exports = (server) => {
 	// get the items posted by the owner
