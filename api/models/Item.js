@@ -3,11 +3,11 @@ const timestamp = require('mongoose-timestamp');
 
 const ItemSchema = new mongoose.Schema({
 
-    itemID : {
-        type : String,
-        required : true,
-        trim : true
-    },
+    // itemID : {
+    //     type : String,
+    //     required : true,
+    //     trim : true
+    // },
     itemName : {
         type : String,
         required : true,

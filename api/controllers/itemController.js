@@ -3,9 +3,8 @@ const User = require('../models/User');
 const Item = require('../models/Item');
 
 module.exports = {
-	createItem : function(itemID, itemName, itemDesc, ownerID, photos){
+	createItem : function(itemName, itemDesc, ownerID, photos){
 		const newItem = new Item({
-			itemID,
 			itemName,
 			itemDesc,
 			ownerID,
