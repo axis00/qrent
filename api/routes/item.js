@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config');
 const User = require('../models/User');
 const Item = require('../models/Item');
+const itemController = require('../controllers/itemController');
 
 module.exports = (server) => {
 	/**
@@ -12,7 +13,7 @@ module.exports = (server) => {
 	 * 
 	 * @apiHeader {String} Authorization The user's authorization token
 	 */
-	server.get('/items',(req,res,next) =>{
+	server.get('/items', async (req,res,next) =>{
 
 		try {
 			const user = await User.findById(req.user._id);
@@ -26,6 +27,7 @@ module.exports = (server) => {
 		} catch (error) {
 			return next(new errors.InternalError(error));
 		}
+
 	});
 
 	/**
