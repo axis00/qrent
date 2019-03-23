@@ -40,7 +40,7 @@ module.exports = (server) => {
 	server.post('/item', async(req,res,next) => {
 
 		try {
-			const user = away User.findById(req.user._id);
+			const user = await User.findById(req.user._id);
 			if (!user.isOwner) return next(new errors.UnauthorizedError());
 
 			const ownerID = req.user._id;
